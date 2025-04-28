@@ -6,7 +6,6 @@ Scene trees can be found in [screenshots](../screenshots/)
 
 - Basic movement
 - Jumping mechanics
-- Enemy behavior
 - Level transitions
 
 ### 📌 Note
