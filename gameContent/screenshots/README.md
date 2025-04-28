@@ -1,6 +1,6 @@
 # 📸 Screenshots
 
-This folder contains  images showing scene trees of the gameplay shown in the [GIFs](../gifs/README.md).
+This folder contains  images showing scene trees of the gameplay shown in the [GIFs](../gifs/).
 
 ## Contents
 
