@@ -3,7 +3,7 @@ Tiny Adventure is a 2D coop platform game developed using Godot Engine.
 
 ## 🎥 Gameplay Preview
 
-![Gameplay](gameContent/gifs/)
+[Gameplay](gifs/)
 
 or
 
