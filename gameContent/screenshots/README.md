@@ -1,6 +1,5 @@
 # 📸 Screenshots
-
-This folder contains  images showing scene trees of the gameplay shown in the [GIFs](../gifs/).
+# This folder contains  images showing scene trees of the gameplay shown in the [GIFs](../gifs/).
 
 ## Contents
 
