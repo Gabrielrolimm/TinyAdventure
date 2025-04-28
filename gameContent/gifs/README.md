@@ -1,6 +1,5 @@
-# 🎥 GIF Previews
 
-This folder contains short GIFs showcasing gameplay mechanics and visual effects from the game.
+# This folder contains short GIFs showcasing gameplay mechanics and visual effects from the game.
 Scene trees can be found in [screenshots](../screenshots/)
 
 ## Contents
