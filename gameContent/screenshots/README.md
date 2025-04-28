@@ -1,6 +1,6 @@
 # 📸 Screenshots
 
-This folder contains  images showing scene trees, different stages, menus, and features of the game.
+This folder contains  images showing scene trees of the gameplay shown in the [GIFs](TinyAdventure/gameContent/gifs).
 
 ## Contents
 
