@@ -7,6 +7,7 @@ Scene trees can be found in [screenshots](../screenshots/)
 - Basic movement
 - Jumping mechanics
 - Level transitions
+- Enemy behavior
 
 ### 📌 Note
 All GIFs are recorded from live gameplay using Godot Engine.
