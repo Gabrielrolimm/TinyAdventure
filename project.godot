@@ -10,9 +10,14 @@ config_version=5
 
 [application]
 
-config/name="TinyAdventure"
+config/name="Sliblings"
+run/main_scene="uid://l2rru1oys7ww"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Transition="*res://Transição/transition.tscn"
 
 [display]
 
@@ -95,3 +100,6 @@ cont_A={
 2d_physics/layer_8="plataforma_movel"
 2d_physics/layer_9="inimigos"
 2d_physics/layer_10="hitbox"
+2d_physics/layer_11="caixa"
+2d_physics/layer_12="elevador"
+2d_physics/layer_13="trampolim"

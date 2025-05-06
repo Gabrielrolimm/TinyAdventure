@@ -26,17 +26,39 @@ func move(delta: float,jump: String,left: String,right: String):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		sprite("idle", 0)
-		
+	
+	rayCastColission(delta)
 	
 	move_and_slide()
+	
 
 func sprite(nome: String, direction: float):
 	animation.animation = nome
 	animation.play()
 	
 	if(direction < 0):
+		$pushRight.enabled = false;
+		$pushLeft.enabled = true;
 		animation.flip_h = true;
 		return;
 	
 	if(direction > 0):
+		$pushRight.enabled = true;
+		$pushLeft.enabled = false;
 		animation.flip_h = false;
+
+func rayCastColission(delta):
+	if($pushRight.is_colliding()):
+		var objeto = $pushRight.get_collider();
+		if(not (objeto is caixa)):
+			return;
+			
+		objeto.velocity = Vector2(30,0) * SPEED * delta;
+		objeto.move_and_slide()
+	
+	if($pushLeft.is_colliding()):
+		var objeto = $pushLeft.get_collider();
+		if(not (objeto is caixa)):
+			return;
+		objeto.velocity = Vector2(-30,0) * SPEED * delta;
+		objeto.move_and_slide()

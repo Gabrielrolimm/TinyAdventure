@@ -1,30 +1,32 @@
 extends Control
 
-@onready var button = $VBoxContainer/Button
+@onready var button = $VBoxContainer/Start
+@onready var child: Button = $VBoxContainer/Start
+
 var index = 0;
-@onready var child: Button = $VBoxContainer/Button
-func _ready():
-	button.grab_focus()
+var local: String;
+var inicio = true;
 
-func _process(delta: float) -> void:
-	if(Input.is_action_just_pressed("cont_A")):
-		child.emit_signal("pressed")
+func _ready() -> void:
+	Transition.acabou.connect(self.transition_acabou, CONNECT_DEFERRED)
 
-	var direction := Input.get_axis("cont_down","cont_up")
-	if(direction < 0):
-		child = $VBoxContainer.get_child(1)
-		child.grab_focus()
-	if(direction > 0):
-		child = $VBoxContainer.get_child(0)
-		child.grab_focus()
+func transition():
+	Transition.play1();
 
 
-func _on_button_pressed() -> void:
-	print("Deu bom...")
+func _on_start_pressed() -> void:
+	local = "res://Main/fases.tscn"
+	transition()
 	
-func _on_button_2_pressed() -> void:
-	print("Deu bom2...")
+func _on_options_pressed() -> void:
+	pass
 	
+func _on_quit_pressed() -> void:
+	get_tree().quit(1)
+
 func _input(event: InputEvent) -> void:
 	if event is InputEventJoypadButton or event is InputEventJoypadMotion:
 		Input.get_joy_name(event.device)
+		
+func transition_acabou() -> void:
+	assert(get_tree().change_scene_to_file(local) == OK);

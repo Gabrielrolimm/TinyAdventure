@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://di1mgthw4udlf"]
+
+[ext_resource type="Script" uid="uid://by7htint0jfv1" path="res://Levels/Level1/Objetos/elevador.gd" id="1_1gwsv"]
+[ext_resource type="Texture2D" uid="uid://ov3lga67j3hb" path="res://assets/Free/Traps/Platforms/Grey On (32x8).png" id="1_23ig7"]
+[ext_resource type="Texture2D" uid="uid://tgv2p2rn41j0" path="res://assets/Free/Traps/Platforms/Grey Off.png" id="2_1gwsv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_waq4u"]
+atlas = ExtResource("1_23ig7")
+region = Rect2(0, 0, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83t77"]
+atlas = ExtResource("1_23ig7")
+region = Rect2(32, 0, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4hgg"]
+atlas = ExtResource("1_23ig7")
+region = Rect2(64, 0, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htd7c"]
+atlas = ExtResource("1_23ig7")
+region = Rect2(96, 0, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1nbpj"]
+atlas = ExtResource("1_23ig7")
+region = Rect2(128, 0, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n42eg"]
+atlas = ExtResource("1_23ig7")
+region = Rect2(160, 0, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10w6o"]
+atlas = ExtResource("1_23ig7")
+region = Rect2(192, 0, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0b5w"]
+atlas = ExtResource("1_23ig7")
+region = Rect2(224, 0, 32, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7drhh"]
+atlas = ExtResource("2_1gwsv")
+region = Rect2(0, 0, 32, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8iueg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_waq4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83t77")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x4hgg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htd7c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1nbpj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n42eg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10w6o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0b5w")
+}],
+"loop": true,
+"name": &"Mexendo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7drhh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Ele" type="CharacterBody2D"]
+collision_layer = 2048
+collision_mask = 4
+script = ExtResource("1_1gwsv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -1)
+sprite_frames = SubResource("SpriteFrames_8iueg")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(1, -1)
+polygon = PackedVector2Array(-12, -1, -15, 3, 16, 3, 16, -1)
+one_way_collision = true
+one_way_collision_margin = 5.0

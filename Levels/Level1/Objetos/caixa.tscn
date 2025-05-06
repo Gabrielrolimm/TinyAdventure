@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8i72hg0po22k"]
+
+[ext_resource type="Texture2D" uid="uid://dg85hkpshqdue" path="res://assets/Free/Traps/Blocks/Idle.png" id="1_7s6ox"]
+[ext_resource type="Script" uid="uid://5q1ypeqsa0r5" path="res://Levels/Level1/Objetos/caixa.gd" id="1_koms5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tym76"]
+size = Vector2(14, 16)
+
+[node name="caixa" type="CharacterBody2D"]
+collision_layer = 1024
+collision_mask = 1039
+script = ExtResource("1_koms5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7s6ox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tym76")

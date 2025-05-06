@@ -1,16 +1,15 @@
-[gd_scene load_steps=18 format=4 uid="uid://bido7fbd02y5k"]
+[gd_scene load_steps=19 format=4 uid="uid://d14rf2r6jt40c"]
 
-[ext_resource type="Texture2D" uid="uid://b1p1mq7q3kkke" path="res://assets/Forest-TileMap/Tiles/TilesNonSliced.png" id="1_e68ce"]
-[ext_resource type="Texture2D" uid="uid://wm4jkqje6lvs" path="res://assets/BG/1.png" id="2_2muw6"]
-[ext_resource type="Texture2D" uid="uid://u4unmv7nu24v" path="res://assets/BG/2.png" id="3_lcibk"]
-[ext_resource type="Texture2D" uid="uid://cr3yncm61d2nc" path="res://assets/BG/3.png" id="4_4vxl8"]
-[ext_resource type="Texture2D" uid="uid://c12lyleh8sx4v" path="res://assets/BG/4.png" id="5_2xotk"]
-[ext_resource type="FontFile" uid="uid://bubgfwyi1ka0r" path="res://assets/fonts/Daydream.ttf" id="6_lcibk"]
-[ext_resource type="Texture2D" uid="uid://byp55ma8bgi1g" path="res://assets/Personagens/2 Owlet_Monster/Owlet_Monster_Idle_4.png" id="7_jka4l"]
-[ext_resource type="Texture2D" uid="uid://dlkn6vo88lpqb" path="res://assets/Personagens/1 Pink_Monster/Pink_Monster_Idle_4.png" id="8_rp3bd"]
+[ext_resource type="Script" uid="uid://du5s4ed021c5q" path="res://Main/fases.gd" id="1_0wggj"]
+[ext_resource type="Texture2D" uid="uid://b1p1mq7q3kkke" path="res://assets/Forest-TileMap/Tiles/TilesNonSliced.png" id="2_kj22m"]
+[ext_resource type="Texture2D" uid="uid://wm4jkqje6lvs" path="res://assets/BG/1.png" id="3_eejjf"]
+[ext_resource type="Texture2D" uid="uid://u4unmv7nu24v" path="res://assets/BG/2.png" id="4_3xqal"]
+[ext_resource type="Texture2D" uid="uid://cr3yncm61d2nc" path="res://assets/BG/3.png" id="5_62ne1"]
+[ext_resource type="Texture2D" uid="uid://c12lyleh8sx4v" path="res://assets/BG/4.png" id="6_b2a8k"]
+[ext_resource type="FontFile" uid="uid://bubgfwyi1ka0r" path="res://assets/fonts/Daydream.ttf" id="7_1dev5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ex525"]
-texture = ExtResource("1_e68ce")
+texture = ExtResource("2_kj22m")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -99,8 +98,27 @@ texture = ExtResource("1_e68ce")
 [sub_resource type="TileSet" id="TileSet_ocv48"]
 sources/1 = SubResource("TileSetAtlasSource_ex525")
 
+[sub_resource type="Theme" id="Theme_lcibk"]
+default_font = ExtResource("7_1dev5")
+default_font_size = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvurx"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjw38"]
+bg_color = Color(1, 0.901961, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xotk"]
+bg_color = Color(0.864824, 0.49368, 0.127393, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omarm"]
+bg_color = Color(0.94281, 0.438388, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6eu0"]
+bg_color = Color(1, 1, 1, 1)
+
 [sub_resource type="Animation" id="Animation_4vxl8"]
-length = 2.0
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -111,7 +129,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(82, 167)]
+"values": [Vector2(400, 234)]
 }
 
 [sub_resource type="Animation" id="Animation_lcibk"]
@@ -126,10 +144,10 @@ tracks/0/path = NodePath("RichTextLabel:position")
 tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.833333, 1.9346),
+"times": PackedFloat32Array(0.0159385, 1.04927, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 2,
-"values": [Vector2(82, 179), Vector2(82, 198), Vector2(82, 179)]
+"values": [Vector2(400, 165), Vector2(400, 180), Vector2(400, 165)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_2xotk"]
@@ -138,39 +156,10 @@ _data = {
 &"aaa": SubResource("Animation_lcibk")
 }
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_rp3bd"]
-atlas = ExtResource("7_jka4l")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_fdxps"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rp3bd")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fdxps"]
-atlas = ExtResource("8_rp3bd")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_qrp5o"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fdxps")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}]
-
-[node name="Escolher" type="Control"]
+[node name="Fases" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_0wggj")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 scale = Vector2(2, 2)
@@ -195,7 +184,7 @@ motion_mirroring = Vector2(512, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(424.5, 331.5)
 scale = Vector2(10.5625, 3.40341)
-texture = ExtResource("2_2muw6")
+texture = ExtResource("3_eejjf")
 
 [node name="clouds1" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.7, 1)
@@ -203,37 +192,37 @@ motion_mirroring = Vector2(558, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/clouds1"]
 position = Vector2(-1, 380)
-texture = ExtResource("3_lcibk")
+texture = ExtResource("4_3xqal")
 centered = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/clouds1"]
 position = Vector2(79, 380)
-texture = ExtResource("3_lcibk")
+texture = ExtResource("4_3xqal")
 centered = false
 
 [node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/clouds1"]
 position = Vector2(159, 380)
-texture = ExtResource("3_lcibk")
+texture = ExtResource("4_3xqal")
 centered = false
 
 [node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/clouds1"]
 position = Vector2(239, 380)
-texture = ExtResource("3_lcibk")
+texture = ExtResource("4_3xqal")
 centered = false
 
 [node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/clouds1"]
 position = Vector2(319, 380)
-texture = ExtResource("3_lcibk")
+texture = ExtResource("4_3xqal")
 centered = false
 
 [node name="Sprite2D6" type="Sprite2D" parent="ParallaxBackground/clouds1"]
 position = Vector2(397, 380)
-texture = ExtResource("3_lcibk")
+texture = ExtResource("4_3xqal")
 centered = false
 
 [node name="Sprite2D7" type="Sprite2D" parent="ParallaxBackground/clouds1"]
 position = Vector2(477, 380)
-texture = ExtResource("3_lcibk")
+texture = ExtResource("4_3xqal")
 centered = false
 
 [node name="trees" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -243,43 +232,43 @@ motion_mirroring = Vector2(557, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/trees"]
 position = Vector2(-1, 440)
 scale = Vector2(1, 0.881)
-texture = ExtResource("4_4vxl8")
+texture = ExtResource("5_62ne1")
 centered = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/trees"]
 position = Vector2(236, 440)
 scale = Vector2(1, 0.881)
-texture = ExtResource("4_4vxl8")
+texture = ExtResource("5_62ne1")
 centered = false
 
 [node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/trees"]
 position = Vector2(157, 440)
 scale = Vector2(1, 0.881)
-texture = ExtResource("4_4vxl8")
+texture = ExtResource("5_62ne1")
 centered = false
 
 [node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/trees"]
 position = Vector2(78, 440)
 scale = Vector2(1, 0.881)
-texture = ExtResource("4_4vxl8")
+texture = ExtResource("5_62ne1")
 centered = false
 
 [node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/trees"]
 position = Vector2(316, 440)
 scale = Vector2(1, 0.881)
-texture = ExtResource("4_4vxl8")
+texture = ExtResource("5_62ne1")
 centered = false
 
 [node name="Sprite2D6" type="Sprite2D" parent="ParallaxBackground/trees"]
 position = Vector2(396, 439)
 scale = Vector2(1, 0.881)
-texture = ExtResource("4_4vxl8")
+texture = ExtResource("5_62ne1")
 centered = false
 
 [node name="Sprite2D7" type="Sprite2D" parent="ParallaxBackground/trees"]
 position = Vector2(476, 440)
 scale = Vector2(1, 0.881)
-texture = ExtResource("4_4vxl8")
+texture = ExtResource("5_62ne1")
 centered = false
 
 [node name="grass" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -287,35 +276,35 @@ motion_mirroring = Vector2(558, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/grass"]
 position = Vector2(41, 538)
-texture = ExtResource("5_2xotk")
+texture = ExtResource("6_b2a8k")
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/grass"]
 position = Vector2(120, 539)
-texture = ExtResource("5_2xotk")
+texture = ExtResource("6_b2a8k")
 
 [node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/grass"]
 position = Vector2(40, 539)
-texture = ExtResource("5_2xotk")
+texture = ExtResource("6_b2a8k")
 
 [node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/grass"]
 position = Vector2(200, 539)
-texture = ExtResource("5_2xotk")
+texture = ExtResource("6_b2a8k")
 
 [node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/grass"]
 position = Vector2(280, 539)
-texture = ExtResource("5_2xotk")
+texture = ExtResource("6_b2a8k")
 
 [node name="Sprite2D6" type="Sprite2D" parent="ParallaxBackground/grass"]
 position = Vector2(440, 539)
-texture = ExtResource("5_2xotk")
+texture = ExtResource("6_b2a8k")
 
 [node name="Sprite2D7" type="Sprite2D" parent="ParallaxBackground/grass"]
 position = Vector2(360, 539)
-texture = ExtResource("5_2xotk")
+texture = ExtResource("6_b2a8k")
 
 [node name="Sprite2D8" type="Sprite2D" parent="ParallaxBackground/grass"]
 position = Vector2(519, 539)
-texture = ExtResource("5_2xotk")
+texture = ExtResource("6_b2a8k")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(520, 383)
@@ -323,16 +312,96 @@ zoom = Vector2(1.25, 1.25)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 82.0
-offset_top = 167.0
-offset_right = 1194.0
-offset_bottom = 294.0
+offset_left = 400.0
+offset_top = 165.0
+offset_right = 1182.0
+offset_bottom = 292.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_outline_size = 4
-theme_override_fonts/normal_font = ExtResource("6_lcibk")
-theme_override_font_sizes/normal_font_size = 40
-text = "Escolha seu controle"
+theme_override_fonts/normal_font = ExtResource("7_1dev5")
+theme_override_font_sizes/normal_font_size = 50
+text = "FASES
+"
+
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 115.0
+offset_top = 367.0
+offset_right = 939.0
+offset_bottom = 408.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+metadata/_edit_group_ = true
+
+[node name="Level1" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_lcibk")
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.976471, 0.576471, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.847059, 0.466667, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("7_1dev5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_xvurx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_bjw38")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2xotk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_omarm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_t6eu0")
+text = "LEVEL  1"
+flat = true
+
+[node name="Level2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_lcibk")
+theme_override_colors/font_hover_color = Color(0.976471, 0.576471, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.847059, 0.466667, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("7_1dev5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_xvurx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_bjw38")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2xotk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_omarm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_t6eu0")
+text = "LEVEL  2
+"
+flat = true
+
+[node name="Level3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_lcibk")
+theme_override_colors/font_hover_color = Color(0.976471, 0.576471, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.847059, 0.466667, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("7_1dev5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_xvurx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_bjw38")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2xotk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_omarm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_t6eu0")
+text = "LEVEL  3
+"
+flat = true
+
+[node name="Level4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_lcibk")
+theme_override_colors/font_hover_color = Color(0.976471, 0.576471, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.847059, 0.466667, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("7_1dev5")
+theme_override_styles/focus = SubResource("StyleBoxFlat_xvurx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_bjw38")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2xotk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_omarm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_t6eu0")
+text = "LEVEL  4
+"
+flat = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -340,26 +409,27 @@ libraries = {
 }
 autoplay = "aaa"
 
-[node name="Dude" type="AnimatedSprite2D" parent="."]
-position = Vector2(247, 335)
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_fdxps")
-animation = &"idle"
-
-[node name="Pink" type="AnimatedSprite2D" parent="."]
-position = Vector2(742, 322)
-scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_qrp5o")
-animation = &"idle"
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+[node name="Voltar" type="Button" parent="."]
 layout_mode = 0
-offset_left = 77.0
-offset_top = 419.0
-offset_right = 516.0
-offset_bottom = 546.0
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/shadow_offset_x = 0
-theme_override_constants/shadow_outline_size = 4
-theme_override_fonts/normal_font = ExtResource("6_lcibk")
-theme_override_font_sizes/normal_font_size = 20
+offset_left = -12.0
+offset_top = 96.0
+offset_right = 174.0
+offset_bottom = 137.0
+theme = SubResource("Theme_lcibk")
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.976471, 0.576471, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.847059, 0.466667, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("7_1dev5")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/focus = SubResource("StyleBoxFlat_xvurx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_bjw38")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2xotk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_omarm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_t6eu0")
+text = "Voltar"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]

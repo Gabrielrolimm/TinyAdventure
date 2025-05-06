@@ -333,7 +333,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_lcibk")
 theme_override_colors/font_hover_color = Color(0.976471, 0.576471, 0, 1)
@@ -349,7 +349,23 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_t6eu0")
 text = "Start"
 flat = true
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_lcibk")
+theme_override_colors/font_hover_color = Color(0.976471, 0.576471, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.847059, 0.466667, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("6_lcibk")
+theme_override_styles/focus = SubResource("StyleBoxFlat_xvurx")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_bjw38")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2xotk")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_omarm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_t6eu0")
+text = "Options"
+flat = true
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme = SubResource("Theme_lcibk")
 theme_override_colors/font_hover_color = Color(0.976471, 0.576471, 0, 1)
@@ -371,5 +387,6 @@ libraries = {
 }
 autoplay = "aaa"
 
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

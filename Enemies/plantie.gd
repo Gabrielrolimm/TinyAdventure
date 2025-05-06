@@ -1,7 +1,6 @@
 extends CharacterBody2D
 
 var facing_left = true
-var health = 5
 var player_in_range = false
 
 @onready var bullet_scene = preload("res://Enemies/seed.tscn")
@@ -15,7 +14,6 @@ func _physics_process(delta: float) -> void:
 
 	for p in players:
 		var dist = global_position.distance_to(p.global_position)
-		
 		if dist < min_distance:
 			min_distance = dist
 			closest_player = p
@@ -30,7 +28,6 @@ func shoot():
 	var bullet = bullet_scene.instantiate()
 	get_parent().add_child(bullet)
 	bullet.global_position = spawn_shoot.global_position
-	
 	if facing_left:
 		bullet.direction = -1
 	else:
@@ -50,21 +47,11 @@ func _on_anim_animation_finished(anim_name: StringName) -> void:
 			$anim.play("attack")
 		else:
 			$anim.play("idle")
-	
-	elif anim_name == "hit":
-		if player_in_range:
-			$anim.play("attack")
-		else:
-			$anim.play("idle")
+			
+	if anim_name == "hit":
+		queue_free()
 
 
 func _on_hurtbox_body_entered(body: Node2D) -> void:
-	var player_velocity = body.velocity
-	
-	if player_velocity.y > 0 and body.global_position.y < global_position.y:
-		health -= 1
-		
-		if health <= 0:
-			queue_free()
-		else:
-			$anim.play("hit")
+		body.velocity.y = -300
+		$anim.play("hit")
