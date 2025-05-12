@@ -3,6 +3,7 @@ extends CharacterBody2D
 @onready var initial_position = global_position;
 @export var isMove = false;
 @export var isSubir = false;
+@export var isParede = false;
 @export var directional = false;
 
 enum direcoes { 
@@ -14,16 +15,16 @@ var direcao = null
 func _physics_process(delta: float) -> void:
 	if(not isMove):
 		return;
+
 	
 	if(directional):
-		move(direcao)
+		move(direcao);
 		move_and_slide()
 		return;
 	
 	if is_on_floor():
 		velocity = Vector2(0,0);
-	
-	
+		
 	if(isSubir):
 		if(int(global_position.y) <= int(initial_position.y)):
 			isMove = false;
@@ -33,7 +34,6 @@ func _physics_process(delta: float) -> void:
 		return;
 
 	velocity =  Vector2(0,1) * 50;
-	
 	move_and_slide()
 	
 	
@@ -68,3 +68,9 @@ func subir():
 	directional = true;
 	isMove = true;
 	direcao = direcoes.CIMA
+	
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	isParede = true;
+
+func _on_area_2d_area_exited(area: Area2D) -> void:
+	isParede = false;

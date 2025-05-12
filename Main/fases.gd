@@ -7,6 +7,7 @@ var inicio = true;
 
 func _ready() -> void:
 	Transition.acabou.connect(self.transition_acabou, CONNECT_DEFERRED)
+	$VBoxContainer/Level1.grab_focus()
 	leveisTerminados();
 	botoesSelecionados()
 	

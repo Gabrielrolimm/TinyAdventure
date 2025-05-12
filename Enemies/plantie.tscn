@@ -166,8 +166,8 @@ collision_mask = 3
 script = ExtResource("1_gu5pc")
 
 [node name="texture" type="Sprite2D" parent="."]
-texture = ExtResource("4_lvlum")
-hframes = 5
+texture = ExtResource("1_mwtwf")
+hframes = 8
 
 [node name="anim" type="AnimationPlayer" parent="."]
 libraries = {
@@ -187,7 +187,7 @@ collision_layer = 0
 collision_mask = 3
 
 [node name="collision" type="CollisionShape2D" parent="playerDetector"]
-position = Vector2(3, 6)
+position = Vector2(5, 6)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_lvlum")
 

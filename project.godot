@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Transition="*res://Transição/transition.tscn"
+Global="*res://Levels/Global.gd"
 
 [display]
 
@@ -94,7 +95,7 @@ cont_A={
 2d_physics/layer_2="mulher"
 2d_physics/layer_3="ground"
 2d_physics/layer_4="botao"
-2d_physics/layer_5="agua"
+2d_physics/layer_5="travarElevador"
 2d_physics/layer_6="madeira"
 2d_physics/layer_7="fim"
 2d_physics/layer_8="plataforma_movel"
@@ -103,3 +104,7 @@ cont_A={
 2d_physics/layer_11="caixa"
 2d_physics/layer_12="elevador"
 2d_physics/layer_13="trampolim"
+2d_physics/layer_14="itens"
+2d_physics/layer_15="fallzone"
+2d_physics/layer_16="checkpoints"
+2d_physics/layer_17="trigger"

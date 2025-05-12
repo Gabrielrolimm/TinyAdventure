@@ -96,7 +96,7 @@ size = Vector2(19, 30)
 [node name="Pink" type="CharacterBody2D" groups=["players", "woman"]]
 position = Vector2(656, 345)
 collision_layer = 2
-collision_mask = 3501
+collision_mask = 134573
 script = ExtResource("1_j41i1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -109,22 +109,20 @@ shape = SubResource("RectangleShape2D_am887")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 268
+collision_mask = 131340
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.5, 2)
 shape = SubResource("RectangleShape2D_it1bf")
 
 [node name="pushRight" type="RayCast2D" parent="."]
-position = Vector2(0, 10)
+position = Vector2(0, 8)
 scale = Vector2(1.5, 1.5)
-enabled = false
 target_position = Vector2(10, 0)
-collision_mask = 1025
+collision_mask = 132096
 
 [node name="pushLeft" type="RayCast2D" parent="."]
-position = Vector2(0, 10)
+position = Vector2(0, 8)
 scale = Vector2(1.5, 1.5)
-enabled = false
 target_position = Vector2(-12, 0)
-collision_mask = 1025
+collision_mask = 132096

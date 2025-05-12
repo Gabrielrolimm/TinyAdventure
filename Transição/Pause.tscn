@@ -1,0 +1,110 @@
+[gd_scene load_steps=9 format=3 uid="uid://bokro7caop7vk"]
+
+[ext_resource type="Script" uid="uid://c67vnj6hfyect" path="res://Transição/pause.gd" id="1_2er5t"]
+[ext_resource type="FontFile" uid="uid://bubgfwyi1ka0r" path="res://assets/fonts/Daydream.ttf" id="1_qncsp"]
+
+[sub_resource type="Theme" id="Theme_2er5t"]
+default_font = ExtResource("1_qncsp")
+default_font_size = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_au5fa"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wrtxi"]
+bg_color = Color(1, 0.901961, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_341hs"]
+bg_color = Color(0.864824, 0.49368, 0.127393, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34b2t"]
+bg_color = Color(0.94281, 0.438388, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7cy42"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Pause" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_2er5t")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -62.0
+offset_top = -112.0
+offset_right = 1376.0
+offset_bottom = 800.0
+color = Color(0, 0, 0, 0.388235)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 462.0
+offset_top = 103.0
+offset_right = 747.0
+offset_bottom = 230.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/normal_font = ExtResource("1_qncsp")
+theme_override_font_sizes/normal_font_size = 50
+text = "PAUSE
+"
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 181.0
+offset_top = 338.0
+offset_right = 1005.0
+offset_bottom = 592.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+metadata/_edit_group_ = true
+
+[node name="Resume" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_2er5t")
+theme_override_colors/font_disabled_color = Color(0.205117, 0.205117, 0.205117, 1)
+theme_override_colors/font_hover_color = Color(0.976471, 0.576471, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.847059, 0.466667, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("1_qncsp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_au5fa")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_wrtxi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_341hs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_34b2t")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7cy42")
+text = "Resume"
+flat = true
+
+[node name="Menu" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_2er5t")
+theme_override_colors/font_hover_color = Color(0.976471, 0.576471, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.847059, 0.466667, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("1_qncsp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_au5fa")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_wrtxi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_341hs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_34b2t")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7cy42")
+text = "Menu"
+flat = true
+
+[node name="Quit" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_2er5t")
+theme_override_colors/font_hover_color = Color(0.976471, 0.576471, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.847059, 0.466667, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("1_qncsp")
+theme_override_styles/focus = SubResource("StyleBoxFlat_au5fa")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_wrtxi")
+theme_override_styles/hover = SubResource("StyleBoxFlat_341hs")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_34b2t")
+theme_override_styles/normal = SubResource("StyleBoxFlat_7cy42")
+text = "Quit"
+flat = true
+
+[connection signal="pressed" from="HBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="HBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="HBoxContainer/Quit" to="." method="_on_quit_pressed"]

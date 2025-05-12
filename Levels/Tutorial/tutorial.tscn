@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=4 uid="uid://didyoueulnb67"]
+[gd_scene load_steps=59 format=4 uid="uid://didyoueulnb67"]
 
 [ext_resource type="Script" uid="uid://bx4dem6qnldoa" path="res://Levels/Tutorial/tutorial.gd" id="1_5rm6e"]
 [ext_resource type="PackedScene" uid="uid://dk50mweq3afhy" path="res://Levels/Tutorial/subir.tscn" id="1_pq0u3"]
@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://cngg73r2sxjah" path="res://assets/Free/Items/Checkpoints/End/End (Idle).png" id="12_cx4p7"]
 [ext_resource type="Texture2D" uid="uid://rn52yxrah4yx" path="res://assets/Free/Items/Checkpoints/End/End (Pressed) (64x64).png" id="13_aa4dd"]
 [ext_resource type="PackedScene" uid="uid://c26eshbgukgjn" path="res://Levels/Tutorial/tutorialButtons.tscn" id="22_72f3i"]
+[ext_resource type="PackedScene" uid="uid://b3ksl3gq5updq" path="res://Itens/Cherry.tscn" id="23_pdppi"]
+[ext_resource type="PackedScene" uid="uid://qrgjrgrqxx8o" path="res://Transição/HUD.tscn" id="25_e3wge"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1oh2x"]
 texture = ExtResource("2_mys2f")
@@ -815,13 +817,26 @@ animation = &"press"
 position = Vector2(6, -121)
 shape = SubResource("RectangleShape2D_j8sgg")
 
+[node name="Fruit" parent="Objects" instance=ExtResource("23_pdppi")]
+position = Vector2(587, 594)
+
+[node name="Fruit2" parent="Objects" instance=ExtResource("23_pdppi")]
+position = Vector2(629, 569)
+
+[node name="Fruit3" parent="Objects" instance=ExtResource("23_pdppi")]
+position = Vector2(674, 569)
+
+[node name="Fruit4" parent="Objects" instance=ExtResource("23_pdppi")]
+position = Vector2(705, 587)
+scale = Vector2(0.5625, 0.5625)
+
 [node name="Players" type="Node2D" parent="."]
 
 [node name="Man" parent="Players" instance=ExtResource("2_mey31")]
-position = Vector2(45, 579)
+position = Vector2(35, 580)
 
 [node name="Woman" parent="Players" instance=ExtResource("3_bf8gk")]
-position = Vector2(127, 580)
+position = Vector2(79, 579)
 
 [node name="Morte" type="Timer" parent="Players"]
 
@@ -844,6 +859,8 @@ metadata/_edit_group_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fallzone/Fallzone2"]
 position = Vector2(1660, 62.5)
 shape = SubResource("RectangleShape2D_e3wge")
+
+[node name="Hud" parent="." instance=ExtResource("25_e3wge")]
 
 [connection signal="press" from="Objects/Button" to="." method="_on_button_press"]
 [connection signal="body_entered" from="Objects/Button/Area2D" to="Objects/Button" method="_on_area_2d_body_entered"]

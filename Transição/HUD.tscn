@@ -1,0 +1,70 @@
+[gd_scene load_steps=4 format=3 uid="uid://qrgjrgrqxx8o"]
+
+[ext_resource type="Script" uid="uid://dj7frt5nyktte" path="res://Transição/hud.gd" id="1_2q5rb"]
+[ext_resource type="Texture2D" uid="uid://beab80rh8onn" path="res://assets/Free/Items/Fruits/Cherries1.png" id="1_tpwkc"]
+[ext_resource type="FontFile" uid="uid://bubgfwyi1ka0r" path="res://assets/fonts/Daydream.ttf" id="2_2q5rb"]
+
+[node name="Hud" type="CanvasLayer"]
+layer = 0
+script = ExtResource("1_2q5rb")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.991797
+anchor_bottom = 0.0666667
+offset_right = -417.5
+offset_bottom = -16.0
+grow_horizontal = 2
+scale = Vector2(1.5, 1.5)
+theme_override_constants/margin_left = 200
+metadata/_edit_use_anchors_ = true
+
+[node name="frutas" type="HBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="TextureRect" type="TextureRect" parent="Control/MarginContainer/frutas"]
+layout_mode = 2
+texture = ExtResource("1_tpwkc")
+stretch_mode = 3
+
+[node name="quantidade" type="Label" parent="Control/MarginContainer/frutas"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_2q5rb")
+text = "0000"
+
+[node name="Timer" type="HBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Nome" type="Label" parent="Control/MarginContainer/Timer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_2q5rb")
+text = "TEMPO: "
+
+[node name="Tempo" type="Label" parent="Control/MarginContainer/Timer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_2q5rb")
+text = "00:00"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,15 +1,15 @@
-[gd_scene load_steps=19 format=4 uid="uid://l2rru1oys7ww"]
+[gd_scene load_steps=19 format=4 uid="uid://dstlquowbbnxl"]
 
-[ext_resource type="Script" uid="uid://bta8hn4hltvco" path="res://Main/tela_inicial.gd" id="1_4vxl8"]
-[ext_resource type="Texture2D" uid="uid://b1p1mq7q3kkke" path="res://assets/Forest-TileMap/Tiles/TilesNonSliced.png" id="1_e68ce"]
-[ext_resource type="Texture2D" uid="uid://wm4jkqje6lvs" path="res://assets/BG/1.png" id="2_2muw6"]
-[ext_resource type="Texture2D" uid="uid://u4unmv7nu24v" path="res://assets/BG/2.png" id="3_lcibk"]
-[ext_resource type="Texture2D" uid="uid://cr3yncm61d2nc" path="res://assets/BG/3.png" id="4_4vxl8"]
-[ext_resource type="Texture2D" uid="uid://c12lyleh8sx4v" path="res://assets/BG/4.png" id="5_2xotk"]
-[ext_resource type="FontFile" uid="uid://bubgfwyi1ka0r" path="res://assets/fonts/Daydream.ttf" id="6_lcibk"]
+[ext_resource type="Texture2D" uid="uid://b1p1mq7q3kkke" path="res://assets/Forest-TileMap/Tiles/TilesNonSliced.png" id="1_0qxau"]
+[ext_resource type="Script" uid="uid://csnoymrk2cnfe" path="res://Levels/Level1/Objetos/fim_level_1.gd" id="1_dfdky"]
+[ext_resource type="Texture2D" uid="uid://wm4jkqje6lvs" path="res://assets/BG/1.png" id="2_dfdky"]
+[ext_resource type="Texture2D" uid="uid://u4unmv7nu24v" path="res://assets/BG/2.png" id="3_habnx"]
+[ext_resource type="Texture2D" uid="uid://cr3yncm61d2nc" path="res://assets/BG/3.png" id="4_aukos"]
+[ext_resource type="Texture2D" uid="uid://c12lyleh8sx4v" path="res://assets/BG/4.png" id="5_tcaix"]
+[ext_resource type="FontFile" uid="uid://bubgfwyi1ka0r" path="res://assets/fonts/Daydream.ttf" id="6_gqm6t"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4vxl8"]
-texture = ExtResource("1_e68ce")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_b1xu3"]
+texture = ExtResource("1_0qxau")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -95,29 +95,45 @@ texture = ExtResource("1_e68ce")
 10:6/0 = 0
 11:6/0 = 0
 
-[sub_resource type="TileSet" id="TileSet_ocv48"]
-sources/1 = SubResource("TileSetAtlasSource_4vxl8")
+[sub_resource type="TileSet" id="TileSet_4uk11"]
+sources/1 = SubResource("TileSetAtlasSource_b1xu3")
 
-[sub_resource type="Theme" id="Theme_lcibk"]
-default_font = ExtResource("6_lcibk")
+[sub_resource type="Theme" id="Theme_dsn7u"]
+default_font = ExtResource("6_gqm6t")
 default_font_size = 30
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xvurx"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwvh7"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bjw38"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7824"]
 bg_color = Color(1, 0.901961, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2xotk"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqk43"]
 bg_color = Color(0.864824, 0.49368, 0.127393, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_omarm"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ex3op"]
 bg_color = Color(0.94281, 0.438388, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t6eu0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_17wtg"]
 bg_color = Color(1, 1, 1, 1)
 
-[sub_resource type="Animation" id="Animation_4vxl8"]
+[sub_resource type="Animation" id="Animation_0qxau"]
+resource_name = "A"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RichTextLabel:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(275, 198), Vector2(275, 156)]
+}
+
+[sub_resource type="Animation" id="Animation_dfdky"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -129,42 +145,24 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(183, 234)]
+"values": [Vector2(275, 156)]
 }
 
-[sub_resource type="Animation" id="Animation_lcibk"]
-resource_name = "aaa"
-length = 2.0
-loop_mode = 1
-capture_included = true
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("RichTextLabel:position")
-tracks/0/interp = 2
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1.03333, 1.96),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 2,
-"values": [Vector2(183, 234), Vector2(183, 260), Vector2(183, 234)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2xotk"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_habnx"]
 _data = {
-&"RESET": SubResource("Animation_4vxl8"),
-&"aaa": SubResource("Animation_lcibk")
+&"A": SubResource("Animation_0qxau"),
+&"RESET": SubResource("Animation_dfdky")
 }
 
-[node name="TelaInicial" type="Control"]
+[node name="CanvasLayer" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_4vxl8")
+script = ExtResource("1_dfdky")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAAABMAAQAAAAAAAAAAABQAAQAAAAEAAAAAABUAAQAAAAEAAAABABMAAQABAAAAAAABABQAAQABAAEAAAABABUAAQABAAEAAAAAABYAAQAAAAIAAAABABYAAQABAAIAAAACABMAAQABAAAAAAACABQAAQABAAEAAAACABUAAQABAAEAAAADABMAAQABAAAAAAADABQAAQABAAEAAAADABUAAQABAAEAAAAEABMAAQABAAAAAAAEABQAAQABAAEAAAAEABUAAQABAAEAAAAFABMAAQABAAAAAAAFABQAAQABAAEAAAAFABUAAQABAAEAAAAGABMAAQABAAAAAAAGABQAAQABAAEAAAAGABUAAQABAAEAAAAHABMAAQABAAAAAAAHABQAAQABAAEAAAAHABUAAQABAAEAAAAIABMAAQABAAAAAAAIABQAAQABAAEAAAAIABUAAQABAAEAAAAJABMAAQABAAAAAAAJABQAAQABAAEAAAAJABUAAQABAAEAAAAKABMAAQABAAAAAAAKABQAAQABAAEAAAAKABUAAQABAAEAAAALABMAAQABAAAAAAALABQAAQABAAEAAAALABUAAQABAAEAAAAMABMAAQABAAAAAAAMABQAAQABAAEAAAAMABUAAQABAAEAAAANABMAAQABAAAAAAANABQAAQABAAEAAAANABUAAQABAAEAAAAOABMAAQABAAAAAAAOABQAAQABAAEAAAAOABUAAQABAAEAAAAPABMAAQABAAAAAAAPABQAAQABAAEAAAAPABUAAQABAAEAAAAQABMAAQABAAAAAAAQABQAAQABAAEAAAAQABUAAQABAAEAAAARABMAAQABAAAAAAARABQAAQABAAEAAAARABUAAQABAAEAAAASABMAAQABAAAAAAASABQAAQABAAEAAAASABUAAQABAAEAAAATABMAAQABAAAAAAATABQAAQABAAEAAAATABUAAQABAAEAAAAUABMAAQABAAAAAAAUABQAAQABAAEAAAAUABUAAQABAAEAAAAVABMAAQABAAAAAAAVABQAAQABAAEAAAAVABUAAQABAAEAAAAWABMAAQABAAAAAAAWABQAAQABAAEAAAAWABUAAQABAAEAAAAXABMAAQABAAAAAAAXABQAAQABAAEAAAAXABUAAQABAAEAAAAYABMAAQABAAAAAAAYABQAAQABAAEAAAAYABUAAQABAAEAAAAZABMAAQABAAAAAAAZABQAAQABAAEAAAAZABUAAQABAAEAAAAaABMAAQABAAAAAAAaABQAAQABAAEAAAAaABUAAQABAAEAAAAbABMAAQABAAAAAAAbABQAAQABAAEAAAAbABUAAQABAAEAAAAcABMAAQABAAAAAAAcABQAAQABAAEAAAAcABUAAQABAAEAAAAdABMAAQABAAAAAAAdABQAAQABAAEAAAAdABUAAQABAAEAAAAeABMAAQABAAAAAAAeABQAAQABAAEAAAAeABUAAQABAAEAAAAfABMAAQABAAAAAAAfABQAAQABAAEAAAAfABUAAQABAAEAAAAgABMAAQABAAAAAAAgABQAAQABAAEAAAAgABUAAQABAAEAAAAhABMAAQABAAAAAAAhABQAAQABAAEAAAAhABUAAQABAAEAAAAiABMAAQABAAAAAAAiABQAAQABAAEAAAAiABUAAQABAAEAAAAjABMAAQABAAAAAAAjABQAAQABAAEAAAAjABUAAQABAAEAAAAkABMAAQABAAAAAAAkABQAAQABAAEAAAAkABUAAQABAAEAAAAlABMAAQABAAAAAAAlABQAAQABAAEAAAAlABUAAQABAAEAAAAmABMAAQABAAAAAAAmABQAAQABAAEAAAAmABUAAQABAAEAAAAnABMAAQACAAAAAAAnABQAAQACAAEAAAAnABUAAQABAAEAAAAmABYAAQABAAIAAAAnABYAAQACAAIAAAACABYAAQABAAIAAAADABYAAQABAAIAAAAEABYAAQABAAIAAAAFABYAAQABAAIAAAAGABYAAQABAAIAAAAHABYAAQABAAIAAAAIABYAAQABAAIAAAAJABYAAQABAAIAAAAKABYAAQABAAIAAAALABYAAQABAAIAAAAMABYAAQABAAIAAAANABYAAQABAAIAAAAOABYAAQABAAIAAAAPABYAAQABAAIAAAAQABYAAQABAAIAAAARABYAAQABAAIAAAASABYAAQABAAIAAAATABYAAQABAAIAAAAUABYAAQABAAIAAAAVABYAAQABAAIAAAAWABYAAQABAAIAAAAXABYAAQABAAIAAAAYABYAAQABAAIAAAAZABYAAQABAAIAAAAaABYAAQABAAIAAAAbABYAAQABAAIAAAAcABYAAQABAAIAAAAdABYAAQABAAIAAAAeABYAAQABAAIAAAAfABYAAQABAAIAAAAgABYAAQABAAIAAAAhABYAAQABAAIAAAAiABYAAQABAAIAAAAjABYAAQABAAIAAAAkABYAAQABAAIAAAAlABYAAQABAAIAAAA=")
-tile_set = SubResource("TileSet_ocv48")
+tile_set = SubResource("TileSet_4uk11")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -184,7 +182,7 @@ motion_mirroring = Vector2(512, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(424.5, 331.5)
 scale = Vector2(10.5625, 3.40341)
-texture = ExtResource("2_2muw6")
+texture = ExtResource("2_dfdky")
 
 [node name="clouds1" type="ParallaxLayer" parent="ParallaxBackground"]
 motion_scale = Vector2(0.7, 1)
@@ -192,37 +190,37 @@ motion_mirroring = Vector2(558, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/clouds1"]
 position = Vector2(-1, 380)
-texture = ExtResource("3_lcibk")
+texture = ExtResource("3_habnx")
 centered = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/clouds1"]
 position = Vector2(79, 380)
-texture = ExtResource("3_lcibk")
+texture = ExtResource("3_habnx")
 centered = false
 
 [node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/clouds1"]
 position = Vector2(159, 380)
-texture = ExtResource("3_lcibk")
+texture = ExtResource("3_habnx")
 centered = false
 
 [node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/clouds1"]
 position = Vector2(239, 380)
-texture = ExtResource("3_lcibk")
+texture = ExtResource("3_habnx")
 centered = false
 
 [node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/clouds1"]
 position = Vector2(319, 380)
-texture = ExtResource("3_lcibk")
+texture = ExtResource("3_habnx")
 centered = false
 
 [node name="Sprite2D6" type="Sprite2D" parent="ParallaxBackground/clouds1"]
 position = Vector2(397, 380)
-texture = ExtResource("3_lcibk")
+texture = ExtResource("3_habnx")
 centered = false
 
 [node name="Sprite2D7" type="Sprite2D" parent="ParallaxBackground/clouds1"]
 position = Vector2(477, 380)
-texture = ExtResource("3_lcibk")
+texture = ExtResource("3_habnx")
 centered = false
 
 [node name="trees" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -232,43 +230,43 @@ motion_mirroring = Vector2(557, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/trees"]
 position = Vector2(-1, 440)
 scale = Vector2(1, 0.881)
-texture = ExtResource("4_4vxl8")
+texture = ExtResource("4_aukos")
 centered = false
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/trees"]
 position = Vector2(236, 440)
 scale = Vector2(1, 0.881)
-texture = ExtResource("4_4vxl8")
+texture = ExtResource("4_aukos")
 centered = false
 
 [node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/trees"]
 position = Vector2(157, 440)
 scale = Vector2(1, 0.881)
-texture = ExtResource("4_4vxl8")
+texture = ExtResource("4_aukos")
 centered = false
 
 [node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/trees"]
 position = Vector2(78, 440)
 scale = Vector2(1, 0.881)
-texture = ExtResource("4_4vxl8")
+texture = ExtResource("4_aukos")
 centered = false
 
 [node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/trees"]
 position = Vector2(316, 440)
 scale = Vector2(1, 0.881)
-texture = ExtResource("4_4vxl8")
+texture = ExtResource("4_aukos")
 centered = false
 
 [node name="Sprite2D6" type="Sprite2D" parent="ParallaxBackground/trees"]
 position = Vector2(396, 439)
 scale = Vector2(1, 0.881)
-texture = ExtResource("4_4vxl8")
+texture = ExtResource("4_aukos")
 centered = false
 
 [node name="Sprite2D7" type="Sprite2D" parent="ParallaxBackground/trees"]
 position = Vector2(476, 440)
 scale = Vector2(1, 0.881)
-texture = ExtResource("4_4vxl8")
+texture = ExtResource("4_aukos")
 centered = false
 
 [node name="grass" type="ParallaxLayer" parent="ParallaxBackground"]
@@ -276,35 +274,35 @@ motion_mirroring = Vector2(558, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/grass"]
 position = Vector2(41, 538)
-texture = ExtResource("5_2xotk")
+texture = ExtResource("5_tcaix")
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/grass"]
 position = Vector2(120, 539)
-texture = ExtResource("5_2xotk")
+texture = ExtResource("5_tcaix")
 
 [node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/grass"]
 position = Vector2(40, 539)
-texture = ExtResource("5_2xotk")
+texture = ExtResource("5_tcaix")
 
 [node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/grass"]
 position = Vector2(200, 539)
-texture = ExtResource("5_2xotk")
+texture = ExtResource("5_tcaix")
 
 [node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/grass"]
 position = Vector2(280, 539)
-texture = ExtResource("5_2xotk")
+texture = ExtResource("5_tcaix")
 
 [node name="Sprite2D6" type="Sprite2D" parent="ParallaxBackground/grass"]
 position = Vector2(440, 539)
-texture = ExtResource("5_2xotk")
+texture = ExtResource("5_tcaix")
 
 [node name="Sprite2D7" type="Sprite2D" parent="ParallaxBackground/grass"]
 position = Vector2(360, 539)
-texture = ExtResource("5_2xotk")
+texture = ExtResource("5_tcaix")
 
 [node name="Sprite2D8" type="Sprite2D" parent="ParallaxBackground/grass"]
 position = Vector2(519, 539)
-texture = ExtResource("5_2xotk")
+texture = ExtResource("5_tcaix")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(520, 383)
@@ -312,80 +310,119 @@ zoom = Vector2(1.25, 1.25)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 183.0
-offset_top = 234.0
-offset_right = 965.0
-offset_bottom = 361.0
+offset_left = 275.0
+offset_top = 198.0
+offset_right = 843.0
+offset_bottom = 278.0
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_outline_size = 4
-theme_override_fonts/normal_font = ExtResource("6_lcibk")
+theme_override_fonts/normal_font = ExtResource("6_gqm6t")
 theme_override_font_sizes/normal_font_size = 50
-text = "TINY ADVENTURE"
+text = "FIM LEVEL 1"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 405.0
-offset_top = 370.0
-offset_right = 631.0
-offset_bottom = 472.0
+offset_left = 297.0
+offset_top = 506.0
+offset_right = 729.0
+offset_bottom = 637.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 40
+alignment = 1
 
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_lcibk")
+size_flags_horizontal = 3
+theme = SubResource("Theme_dsn7u")
 theme_override_colors/font_hover_color = Color(0.976471, 0.576471, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.847059, 0.466667, 0, 1)
 theme_override_constants/outline_size = 0
-theme_override_fonts/font = ExtResource("6_lcibk")
-theme_override_styles/focus = SubResource("StyleBoxFlat_xvurx")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_bjw38")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2xotk")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_omarm")
-theme_override_styles/normal = SubResource("StyleBoxFlat_t6eu0")
-text = "Start"
+theme_override_fonts/font = ExtResource("6_gqm6t")
+theme_override_styles/focus = SubResource("StyleBoxFlat_pwvh7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_q7824")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yqk43")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ex3op")
+theme_override_styles/normal = SubResource("StyleBoxFlat_17wtg")
+text = "Reiniciar"
 flat = true
 
 [node name="Options" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = SubResource("Theme_lcibk")
+size_flags_horizontal = 3
+theme = SubResource("Theme_dsn7u")
 theme_override_colors/font_hover_color = Color(0.976471, 0.576471, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.847059, 0.466667, 0, 1)
 theme_override_constants/outline_size = 0
-theme_override_fonts/font = ExtResource("6_lcibk")
-theme_override_styles/focus = SubResource("StyleBoxFlat_xvurx")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_bjw38")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2xotk")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_omarm")
-theme_override_styles/normal = SubResource("StyleBoxFlat_t6eu0")
-text = "Options"
+theme_override_fonts/font = ExtResource("6_gqm6t")
+theme_override_styles/focus = SubResource("StyleBoxFlat_pwvh7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_q7824")
+theme_override_styles/hover = SubResource("StyleBoxFlat_yqk43")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ex3op")
+theme_override_styles/normal = SubResource("StyleBoxFlat_17wtg")
+text = "MENU"
 flat = true
 
-[node name="Quit" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme = SubResource("Theme_lcibk")
-theme_override_colors/font_hover_color = Color(0.976471, 0.576471, 0, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0.847059, 0.466667, 0, 1)
-theme_override_constants/outline_size = 0
-theme_override_fonts/font = ExtResource("6_lcibk")
-theme_override_styles/focus = SubResource("StyleBoxFlat_xvurx")
-theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_bjw38")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2xotk")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_omarm")
-theme_override_styles/normal = SubResource("StyleBoxFlat_t6eu0")
-text = "Quit"
-flat = true
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 334.0
+offset_right = 354.0
+offset_bottom = 383.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/normal_font = ExtResource("6_gqm6t")
+theme_override_font_sizes/normal_font_size = 31
+text = "FRutas"
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 687.0
+offset_top = 325.0
+offset_right = 889.0
+offset_bottom = 374.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/normal_font = ExtResource("6_gqm6t")
+theme_override_font_sizes/normal_font_size = 31
+text = "Tempo"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 195.0
+offset_top = 403.0
+offset_right = 397.0
+offset_bottom = 452.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/normal_font = ExtResource("6_gqm6t")
+theme_override_font_sizes/normal_font_size = 31
+text = "32x"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 703.0
+offset_top = 394.0
+offset_right = 855.0
+offset_bottom = 443.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_outline_size = 4
+theme_override_fonts/normal_font = ExtResource("6_gqm6t")
+theme_override_font_sizes/normal_font_size = 31
+text = "20:00"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-&"": SubResource("AnimationLibrary_2xotk")
+&"": SubResource("AnimationLibrary_habnx")
 }
-autoplay = "aaa"
+autoplay = "A"
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

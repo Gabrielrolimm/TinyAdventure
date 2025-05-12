@@ -186,7 +186,7 @@ position = Vector2(714, 371)
 collision_layer = 128
 collision_mask = 3
 gravity_scale = 0.0
-can_sleep = false
+lock_rotation = true
 script = ExtResource("1_qax4l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
